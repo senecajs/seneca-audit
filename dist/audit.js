@@ -10,8 +10,6 @@ const defaults = {
     auditCallback: function () { },
 };
 function preload(plugin) {
-    var _a;
-    var _b;
     const seneca = this;
     const root = seneca.root;
     const options = plugin.options;
@@ -22,12 +20,12 @@ function preload(plugin) {
     const Jsonic = seneca.util.Jsonic;
     const ignored = new Patrun({ gex: true });
     const intercepted = new Patrun({ gex: true });
-    const tdata = (_a = (_b = root.context).$_sys_Audit) !== null && _a !== void 0 ? _a : (_b.$_sys_Audit = {
+    const tdata = root.context.$_sys_Audit ??= {
         active: options.active,
         msg: {},
         trace: {},
         runs: {},
-    });
+    };
     /*
     // test
     async function auditCallback(this: any, msg: any) {
