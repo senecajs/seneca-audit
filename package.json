@@ -16,6 +16,7 @@
     "url": "git://github.com/senecajs/seneca-audit.git"
   },
   "scripts": {
+    "prettier": "prettier --write .",
     "test": "node --enable-source-maps --test \"dist-test/**/*.test.js\"",
     "test-some": "node --enable-source-maps --test-name-pattern=\"$TEST_PATTERN\" --test \"dist-test/**/*.test.js\"",
     "watch": "tsc --build src test -w",
@@ -44,6 +45,7 @@
     "@seneca/maintain": "^0.1.0",
     "@types/node": "^24.10.1",
     "@seneca/doc": "^8.0.0",
+    "prettier": "3.8.4",
     "seneca-msg-test": "^4.1.0",
     "typescript": "^5.9.3"
   },
