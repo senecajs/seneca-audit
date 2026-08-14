@@ -1,8 +1,7 @@
-![Seneca Audit](http://senecajs.org/files/assets/seneca-logo.png)
+![Seneca](http://senecajs.org/files/assets/seneca-logo.png)
+> A [Seneca.js](http://senecajs.org) plugin
 
-> _Seneca Audit_ is a plugin for [Seneca](http://senecajs.org)
-
-Capture message run traces and durations.
+# @seneca/audit
 
 [![npm version](https://img.shields.io/npm/v/@seneca/audit.svg)](https://npmjs.com/package/@seneca/audit)
 [![build](https://github.com/senecajs/seneca-audit/actions/workflows/build.yml/badge.svg)](https://github.com/senecajs/seneca-audit/actions/workflows/build.yml)
@@ -11,10 +10,10 @@ Capture message run traces and durations.
 [![DeepScan grade](https://deepscan.io/api/teams/5016/projects/19453/branches/505563/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5016&pid=19453&bid=505563)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9d54b38a991fe7b92a43/maintainability)](https://codeclimate.com/github/senecajs/seneca-audit/maintainability)
 
-# @seneca/audit
-
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
+|---|---|
+
+Capture message run traces and durations.
 
 ## Install
 
@@ -65,12 +64,34 @@ console.log(await seneca.entity('sys/audit').list$())
 
 ## More Examples
 
+See [test/](test/) for more usage examples.
+
 ## Motivation
+
+A [Seneca.js](http://senecajs.org) plugin.
 
 ## Support
 
+If you're using this module and need help, you can:
+
+- Post a [github issue](https://github.com/senecajs/seneca-audit/issues)
+- Tweet to [@senecajs](http://twitter.com/senecajs)
+- Ask on the [Gitter](https://gitter.im/senecajs/seneca)
+
 ## API
+
+See [source](https://github.com/senecajs/seneca-audit) for API details.
 
 ## Contributing
 
+The [Senecajs org](https://github.com/senecajs/) encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+
+### Running tests
+
+```sh
+npm run test
+```
+
 ## Background
+
+Part of the [Senecajs org](https://github.com/senecajs/).
