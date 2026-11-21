@@ -19,7 +19,7 @@ Capture message run traces and durations.
 ## Install
 
 ```sh
-$ npm install @seneca/audit
+$ npm install seneca@^4 @seneca/entity @seneca/audit
 ```
 
 ## Quick Example
@@ -28,8 +28,7 @@ $ npm install @seneca/audit
 const Seneca = require('seneca')
 
 const seneca = Seneca({ legacy: false })
-  .use('promisify')
-  .use('entity', { mem_store: true })
+  .use('@seneca/entity', { mem_store: true })
   .use('audit', {
     // Auditing is off by default; turn it on.
     active: true,
