@@ -6,8 +6,7 @@ run()
 async function run() {
   const seneca = await Seneca({ legacy: false })
     .test()
-    .use('entity', { mem_store: true })
-    .use('promisify')
+    .use('@seneca/entity', { mem_store: true })
     .use(Audit, {
       active: true,
 

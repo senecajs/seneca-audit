@@ -1,21 +1,26 @@
 "use strict";
 /* Copyright © 2024 Richard Rodger, MIT License. */
 Object.defineProperty(exports, "__esModule", { value: true });
-// Default options.
-const defaults = {
+// Messages that are not audited, unless the ignore option replaces them.
+const defaultIgnore = ['plugin: define', 'plugin: init'];
+function noAuditCallback() { }
+// Default options, built with the validator that Seneca passes in.
+const defaults = ({ valid }) => ({
     debug: false,
     active: false,
-    ignore: ['plugin: define', 'plugin: init'],
+    // Patterns, as strings or objects. A list that you pass replaces the
+    // default list.
+    ignore: valid.Default([...defaultIgnore], [valid.Any()]),
     intercept: {},
-    auditCallback: function () { },
-};
+    auditCallback: function auditCallback() { },
+});
 function preload(plugin) {
     const seneca = this;
     const root = seneca.root;
     const options = plugin.options;
-    const auditCallback = (options.auditCallback || defaults.auditCallback).bind(seneca);
-    const ignore = options.ignore || defaults.ignore;
-    const intercept = options.intercept || defaults.intercept;
+    const auditCallback = (options.auditCallback || noAuditCallback).bind(seneca);
+    const ignore = options.ignore || defaultIgnore;
+    const intercept = options.intercept || {};
     const Patrun = seneca.util.Patrun;
     const Jsonic = seneca.util.Jsonic;
     const ignored = new Patrun({ gex: true });

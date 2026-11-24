@@ -1,6 +1,6 @@
 {
   "name": "@seneca/audit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/audit.js",
   "type": "commonjs",
   "types": "dist/audit.d.ts",
@@ -13,7 +13,7 @@
   "author": "Richard Rodger - richardrodger.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/senecajs/seneca-audit.git"
+    "url": "git+https://github.com/senecajs/seneca-audit.git"
   },
   "scripts": {
     "prettier": "prettier --write .",
@@ -32,26 +32,28 @@
   "files": [
     "dist",
     "src/**/*.ts",
-    "LICENSE"
+    "LICENSE",
+    "README.md",
+    "CHANGES.md"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "devDependencies": {
-    "seneca": "3.38.0",
-    "seneca-entity": "28.1.0",
-    "seneca-promisify": "3.7.2",
     "@hapi/code": "^9.0.3",
+    "@seneca/doc": "^9.0.0",
+    "@seneca/entity": "^29.0.0",
     "@seneca/maintain": "^0.1.0",
     "@types/node": "^24.10.1",
-    "@seneca/doc": "^8.0.0",
     "prettier": "3.8.4",
-    "seneca-msg-test": "^4.1.0",
+    "seneca": "^4.0.0",
+    "seneca-msg-test": "^5.0.0",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "seneca": ">=3||>=4.0.0-rc2",
-    "seneca-entity": ">=26",
-    "seneca-promisify": ">=3"
+    "seneca": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
